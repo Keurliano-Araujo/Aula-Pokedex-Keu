@@ -1,0 +1,242 @@
+/*Zerando o HTML*/
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+
+}
+
+
+/*Estilização do body*/
+body{
+    font-family: 'Handjet', sans-serif;
+    font-size: 20px;
+    background-image: url('fundo.gif');
+    background-size: cover;
+}
+
+header{
+
+    background-color: #263238;
+    text-align: center;
+    height: 8rem;
+
+}
+
+/*Estilização da logo*/
+.logo_img{
+
+    width: 18%;
+
+}
+
+.container{
+
+    /*Define uma largura fiza de 1200px*/
+    width: 1200px;
+
+    /*Garante que a largura da div nunca ultrapasse 100% da tela ou do elemento pai,
+    impedindo a quebra do layout*/
+    max-width: 100%;
+
+    /*Define o espaçamento interno da div com 0 da parte inferior e 2rem a esquerda e a direita*/
+    padding: 0 2rem;
+
+    /*Para centralizar o elemento ao meio*/
+    margin: auto;
+
+}
+/*================FINAL DA ESTILIZAÇÃO DO HEADER===================*/
+/*================FINAL DA ESTILIZAÇÃO DO HEADER===================*/
+/*================FINAL DA ESTILIZAÇÃO DO HEADER===================*/
+
+
+
+
+
+
+/* A propriedade color:inherit no css é utilizada para fazer com que o elemento herde a cor do seu 
+elemento pai, no exemplo abaixo a tag de link vai herdar a cor do texto do elemento pai em vez de usar o estilo padrão*/
+a {
+    
+    color: inherit;
+    
+}
+
+
+/*AQUI CRIAMOS UMA CLASSE NO HTML PARA PODER MEXERSOMENTE A POKEBOLA*/
+.pokebola{
+
+  width: 350px;
+
+}
+
+/*A IMAGEM OCUPARÁ 100% O TAMANHO DA DIV POKEBOLA*/
+.pokebola_img{
+
+    width: 100%;
+
+    /*A Prpriedade filter, serve para aplicar filtros nos elemntos
+    o drop-shadow ajuda a inserir uma sombra, o hsl serve par por um efeito de
+    degradê na tonalidade preta de forma mais clara*/
+    filter: drop-shadow(15px 15px 15px hsl(76deg 0% 0% /0.5));
+
+    cursor: pointer;
+
+
+}
+
+
+/*Para fazer o efeito de tremer a tela, iremos utilizar o :active na imagem da poke bola*/
+.pokebola_img:active{
+
+    /*Tempo da animação*/
+    animation: animation_p 0.3s;
+
+    /*Quantas vezes se vai querer que execute o efeito de tremer*/
+    animation-iteration-count: 200;
+}
+
+/*Define a sequeência de frames que compõem a animação, define como a 
+imagem se move ao longo da animação*/
+@keyframes animation_p{
+
+    /*No início a imagem não terá movimento*/
+    0% {margin-left: 0;}
+
+    /*No primeiro quarto da animação, ela vai se deslocar em 10px para a direita*/
+    25%{margin-left: 10px;}
+
+    /*No meio da animação ela vai retornar a posição normal*/
+    50%{margin-left: 0;}
+
+    /*No receiro quarto ela vai se deslogar 10px para a esquerda*/
+    75%{margin-left: -10px;}
+
+    /*E ao final ela retorna mais uma vez a sua posição inicial*/
+    100%{margin-left: 0;}
+
+}
+
+
+
+
+
+
+
+
+
+
+/*=================Estilização dos pokemons==================*/
+/*=================Estilização dos pokemons==================*/
+/*=================Estilização dos pokemons==================*/
+.pokemon{
+
+    display: flex;
+    align-items: center;
+    /*Espaçamento entre os elementos*/
+    justify-content: space-around;
+
+    /*Quando estiver no mobile, ele quebra para a próxima linha*/
+    flex-wrap: wrap;
+
+    /*Espaçamento entre a imagem e as informações*/
+    gap: 1rem;
+
+    /*Definindo um bacground com degradê em laranja e amarelo*/
+    background:linear-gradient(45deg, #ffeb3b, #ff9800);
+
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 500px;
+
+    /*Caso a div esteja em um tamanho menor que 500px ela não vai estourar*/
+    max-width: 100%;
+
+    filter: drop-shadow(15px 15px 15px hsl(76deg 0% 0% /0.5));
+
+}
+
+
+.pokemon__circle{
+
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgb(227, 227, 227);
+
+    /*Os atributos abaixo ajudam a centralizar a imagem dentro da DIV*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+/*A imagem vai ocupar 100% da largura da div e ajustar com o cantainer, transbordando um pouco*/
+.pokemon__img{
+
+    width: 100%;
+    
+    /*A Prpriedade filter, serve para aplicar filtros nos elemntos
+    o drop-shadow ajuda a inserir uma sombra, o hsl serve par por um efeito de
+    degradê na tonalidade preta de forma mais clara*/
+    filter: drop-shadow(15px 15px 15px hsl(76deg 0% 0% /0.5));
+
+}
+
+
+
+.name{
+
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.name_habilities{
+
+    /*Terá somente as primeiras letras maísuculas*/
+    text-transform: capitalize;
+    margin-left: 18px;
+
+}
+
+
+/*Estilização da div que contém os elementos Pokemon e informações*/
+.pokestop{
+
+    display: flex;
+    align-items: center;
+    /*Usada dentro de uma div flexível, quando o display é do tipo flex ou inline flex
+    alinha os itens filhos ao centro da div com base no eixo principal*/
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    padding: 2rem 0;
+
+    min-height: calc(100vh - 8rem - 52px );
+
+
+}
+
+
+/*============RODAPÉ=======================RODAPÉ=====================*/
+/*============RODAPÉ=======================RODAPÉ=====================*/
+/*============RODAPÉ=======================RODAPÉ=====================*/
+footer{
+
+    background-color: #263238;
+    height: 52px;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-weight: 700;
+    font-size: 30px;
+
+}
